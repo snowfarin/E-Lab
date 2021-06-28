@@ -1,0 +1,237 @@
+.parallax{
+  min-height: 700px;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+#img1{
+  background-image: url('./img/img-05.jpg');
+}
+#img2{
+  background-image: url('./img/img-08.jpg');
+}
+#img3{
+  background-image: url('./img/04.jpg');
+}
+.parallax div{
+  position: absolute;
+  top: 30%;
+  margin-left: 50px;
+  text-align: center;
+  color: white;
+  width: 45%;
+  font-family:initial;
+}
+#main-button:hover{
+  background-color: white;
+  color: black;
+  border: none;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+#main-button{
+  margin-top: 30px;
+}
+.frame1{
+  /* border-top-color: #c5bfbf;
+  border-left-color: #b4b1b1;
+  border-right-color: black;
+  border-bottom-color:black;
+  border-width: 10px;
+  border-style: inset; */
+ 
+	
+	
+  /* box-shadow:3px 8px 16px 0px rgba(0,0,0,0.2) ; */
+  padding: 15px;
+  margin-top: 20px;
+  /* box-shadow:3px 8px 16px 0px rgba(0,0,0,0.2) ; */
+  background-color: #c7daf0;
+  /* border: #c26b3f 10px solid; */
+  /* outline: #532c18 5px inset; */
+  /* margin:50px 20px */
+}
+.frame1 figure{
+  background: #fff;
+	overflow: hidden;
+}
+.frame1 div{
+  text-align: center;
+  font-size: 1.2em;
+  font-weight: 500;
+  text-transform: capitalize;
+}
+.frame1 img{
+  /* border:white 10px solid; */
+  -webkit-transform: scale(1);
+	transform: scale(1);
+	-webkit-transition: .3s ease-in-out;
+	transition: .3s ease-in-out;
+}
+.frame1 img:hover{
+  -webkit-transform: scale(1.3);
+	transform: scale(1.3);
+}
+/*  */
+.filter{
+  background-color: #093266;
+  padding: 30px;
+  color: white;
+}
+/* 
+.dropdown {
+  font-family: cursive;
+  margin: 20px;
+  position: relative;
+  display: inline-block;
+}
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f1f1f1;
+  min-width: 150px;
+  box-shadow: 3px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+  padding: 20px;
+}
+.dropdown-content option {
+  color: black;
+  text-decoration: none;
+  display: block;
+  padding: 3px 10px;
+}
+
+.dropdown-content option:hover {
+  color: rgb(231, 33, 76);
+  text-decoration: none;
+  position: relative;
+  animation: myfirst 1s ;
+  animation-direction: normal;
+  animation-fill-mode: forwards;
+}
+@keyframes myfirst {
+  0% { left: 0px; }
+  100% { left: 12px; }
+}
+.dropdown:hover .dropdown-content {display: block;} */
+
+
+.dropdown {
+  font-family: cursive;
+  margin: 20px;
+  position: relative;
+  display: inline-block;
+}
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f1f1f1;
+  min-width: 150px;
+  box-shadow: 3px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+  padding: 20px;
+}
+.dropdown-content option {
+  color: black;
+  text-decoration: none;
+  display: block;
+  padding: 3px 10px;
+}
+
+.dropdown-content option:hover {
+  color: rgb(231, 33, 76);
+  text-decoration: none;
+  position: relative;
+  animation: myfirst 1s ;
+  animation-direction: normal;
+  animation-fill-mode: forwards;
+}
+@keyframes myfirst {
+  0% { left: 0px; }
+  100% { left: 12px; }
+}
+.dropdown:hover .dropdown-content {display: block;}
+
+.footer{
+  background-color: #093266;
+  color:white;
+  padding: 30px;
+}
+.footer-content{
+  padding:'10px 30px'
+}
+.footer-content a{
+  font-size: 1.3em;
+  color:rgb(231, 33, 76);
+  text-decoration: none;
+}
+.footer-content a:hover{
+  color:teal;
+  text-decoration: none;
+}
+.backLink{
+  padding-left: 20px;
+  border-left:rgb(231, 33, 76) 5px solid ;
+  /* border-bottom:rgb(231, 33, 76) 1px solid ; */
+}
+.buttonBox{
+  height: 40px;
+  border: none;
+  background-color:rgb(231, 33, 76);
+  padding: 0px 10px;
+  margin-top: 20px;
+  color: white;
+  /* position: relative; */
+}
+
+/* .arrow{
+  position: relative;
+  margin-top: 20px;
+  width: 40px;
+  border-top: 1px solid white;
+} */
+#box{
+  /* border: 5px solid #093266 ; */
+  text-align: center;
+  /* box-shadow:3px 8px 16px 0px rgba(0,0,0,0.2) ; */
+  /* background-color: #E5F1FF; */
+  padding: 20px;
+  margin: 10px 30px;
+  border: 5px solid grey;
+}
+#arrowButton{
+  position: relative;
+  font-size: 3em;
+  color: rgb(114, 114, 114);
+}
+
+/* %%%%%%%%%%%%%%%%%%%%%%%5 Form Style $$$$$$$$$$$$$$$$$$$$$$$ */
+.container{
+  margin: auto;
+  width: 80%;
+  margin-top: 40px;
+}
+.icon-button{
+  background-color: hsl(345, 95%, 43%);
+  padding: 5px 10px;
+  color: white;
+  margin: 10px;
+  border: none;
+  box-shadow: 3px 8px 16px 0px rgba(0,0,0,0.2);
+  position: relative;
+}
+.icon-button:hover{
+  bottom: 2px;
+}
+.title{
+  font-size: 1.2em;
+}
+.box{
+  border: 1px  rgba(27, 27, 27, 0.2) solid;
+  padding: 20px;
+  margin-top: 20px;
+}
+.card{
+  box-shadow:3px 8px 16px 0px rgba(0,0,0,0.2) ;
+  margin-bottom:50px;
+}

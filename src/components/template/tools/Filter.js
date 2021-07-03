@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Row, Col, Form, Button } from 'react-bootstrap'
+import { Row, Col, Form, Button,Container } from 'react-bootstrap'
 import { Link } from 'react-router-dom'
 import { categoryRef, contentRef, imagesRef } from '../../../firebase/Firebase'
 import { firebaseLooper } from '../../../firebase/FirebaseLooper'
@@ -122,19 +122,23 @@ export class Filter extends Component {
                             </Row>
 
                             <Row className='d-flex justify-content-center'>
-                                <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do consectetur adipiscing elit,sed do </p>
+                            <Container>
+                                <p> Plants and plant organs were the first exhibits in the Botany Museum. These specimens have been preserved and are on display in the Room. The E-Museum is a comprehensive online resource for non-flowering and flowering plants. This will be an electronic museum with detailed information on each specimen. The E-Museum incorporates the entire collection of all species in a seamless manner. This platform will offer a variety of services. </p>
+                                </Container> 
                             </Row>
 
                             <hr style={{ color: 'grey', backgroundColor: 'grey', width: '60%' }}></hr>
                         </> :
-                        lab === 'bot' ?
+                        lab === 'herbarium' ?
                         <>
                             <Row className='d-flex justify-content-center'>
                                 <p style={{ fontSize: '4em' }}> HERBARIUM - MUSEUM</p>
                             </Row>
 
                             <Row className='d-flex justify-content-center'>
-                                <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do consectetur adipiscing elit,sed do </p>
+                            <Container>
+                                <p> The online database is based on information from the herbarium, a selection of dried and pressed plant specimens. This online database will provide detailed information about each plant species, including its common name, systematic location, and taxonomic description. The online data base is a critical first step in resolving concerns of the environment. </p>
+                                </Container>
                             </Row>
 
                             <hr style={{ color: 'grey', backgroundColor: 'grey', width: '60%' }}></hr>
@@ -145,7 +149,9 @@ export class Filter extends Component {
                                 <p style={{ fontSize: '4em' }}> ZOOLOGY - MUSEUM </p>
                             </Row>
                             <Row className='d-flex justify-content-center'>
-                                <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do consectetur adipiscing elit,sed do </p>
+                            <Container>
+                                <p> The Museum houses an extensive collection of scientifically important zoological material. It  harbors animals in fixing fluids, dried or specially prepared animals, stuffed animals, skeletons, hides, and articles made from horns, bones, shells, etc. In Zoological museums scientific research is conducted on the taxonomic description of fauna, zoogeography, variations, comparative morphology and anatomy, and evolution, that is, historical development. </p>
+                                </Container>
                             </Row>
                             <hr style={{ color: 'grey', backgroundColor: 'grey', width: '60%' }}></hr>
                         </>:''}

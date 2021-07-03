@@ -17,8 +17,8 @@ function Slider(props) {
                         src={Img3}
                         alt="Second slide"
                     />
-                    <Carousel.Caption style={{ bottom: '30%', textAlign: 'start', width: '45%' }} >
-                        <div style={{ fontSize: '3em', fontFamily: '-moz-initial' }} >ST.MARY'S COLLEGE (AUTONOMOUS)</div>
+                    <Carousel.Caption style={{ bottom: '35%', textAlign: 'start', width: '85%' }} >
+                        <div style={{ fontSize: '3em', fontFamily: '-moz-initial' }} >ST.MARY'S COLLEGE (AUTONOMOUS),THOOTHUKUDI</div>
                         <Button id='main-button' variant='danger' size="lg" onClick={(e) => setLab('botany')}>View Botany Museum <i class="fa fa-angle-right" aria-hidden="true"></i> </Button>
                     </Carousel.Caption>
                 </Carousel.Item>
@@ -29,8 +29,8 @@ function Slider(props) {
                         src={I1}
                         alt="Second slide"
                     />
-                    <Carousel.Caption style={{ bottom: '30%', textAlign: 'start', width: '45%' }} >
-                        <div style={{ fontSize: '3em', fontFamily: '-moz-initial' }} >ST.MARY'S COLLEGE (AUTONOMOUS)</div>
+                    <Carousel.Caption style={{ bottom: '35%', textAlign: 'start', width: '85%' }} >
+                        <div style={{ fontSize: '3em', fontFamily: '-moz-initial' }} >ST.MARY'S COLLEGE (AUTONOMOUS),THOOTHUKUDI</div>
                         <Button id='main-button' variant='danger' size="lg" onClick={(e) => setLab('herbarium')}>View Herbarium Museum  <i class="fa fa-angle-right" aria-hidden="true"></i> </Button>
                     </Carousel.Caption>
                 </Carousel.Item>
@@ -41,8 +41,8 @@ function Slider(props) {
                         src={Img1}
                         alt="First slide"
                     />
-                    <Carousel.Caption style={{ bottom: '30%', textAlign: 'start', width: '45%' }} >
-                        <div style={{ fontSize: '3em', fontFamily: '-moz-initial' }} >ST.MARY'S COLLEGE (AUTONOMOUS)</div>
+                    <Carousel.Caption style={{ bottom: '35%', textAlign: 'start', width: '85%' }} >
+                        <div style={{ fontSize: '3em', fontFamily: '-moz-initial' }} >ST.MARY'S COLLEGE (AUTONOMOUS),THOOTHUKUDI</div>
                         <Button id='main-button' variant='danger' size="lg" onClick={(e) => setLab('zoology')}> View Zoology Museum <i class="fa fa-angle-right" aria-hidden="true"></i> </Button>
                     </Carousel.Caption>
                 </Carousel.Item>

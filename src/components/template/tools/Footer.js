@@ -26,13 +26,14 @@ function Footer() {
                 </Col>
                 <Col sm={{ span: '4', offset: '1' }} className='footer-content'>
                     <p style={{ fontSize: '2em' }}> Quick Links</p>
-                    <a href='http://stmaryscollege.edu.in/' > <i class="fa fa-globe" aria-hidden="true" style={{ padding: '5px' }}></i> www.stmaryscollege.edu.in </a>
+                    <a href='http://stmaryscollege.edu.in/' > <i class="fa fa-globe" aria-hidden="true" style={{ padding: '5px' }}></i> www.stmaryscollege.edu.in </a><br/><br/>
+                   <a href='/'><i class="fa fa-arrow-circle-right" aria-hidden="true" style={{ padding: '5px' }}></i> Credits</a>
                 </Col>
 
 
             </Row>
             <hr style={{ color: 'grey', backgroundColor: 'grey', width: '100%' }}></hr>
-            <p style={{ textAlign: 'center', color:'grey' }}>Copyright 2021 Digisailor. All Rights Reserved. </p>
+            <p style={{ textAlign: 'center', color:'grey' }}>Copyright <i class="fa fa-copyright" aria-hidden="true" style={{ padding: '5px' }}></i> 2021 St.Mary's College. All Rights Reserved. </p>
         </div>
     )
 }

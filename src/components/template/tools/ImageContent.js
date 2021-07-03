@@ -58,7 +58,7 @@ class ImageContent extends Component {
                                 <p style={{ color: 'rgb(231, 33, 76)', fontSize: '4em', textTransform: 'uppercase', }}> {list[count].name}</p>
                             </Row>
                             <Row className='d-flex justify-content-center' >
-                                <p style={{ fontSize: '1.2em' }}>Lorem ipsum dolor consectetur adipiscing elit, sed do ipsum dolor sit amet,</p>
+                                {/* <p style={{ fontSize: '1.2em' }}>Lorem ipsum dolor consectetur adipiscing elit, sed do ipsum dolor sit amet,</p> */}
                             </Row>
                             <hr style={{ color: 'grey', backgroundColor: 'black', width: '70%', margin: 'auto', marginBottom: '30px' }}></hr>
                             <Row className='d-flex justify-content-center'>

@@ -13,6 +13,7 @@ function Header() {
                 <Nav className="m-auto">
                     <Link className='nav-link' to="/addCategory">Add Category</Link>
                     <Link className='nav-link' to="/addContent">Add Data</Link>
+                    <Link className='nav-link' to="/editDelete">List</Link>
                 </Nav>
                 <Nav className="ml-auto">
                     <Link className='nav-link' to="/logout">Logout</Link>

@@ -4,9 +4,10 @@ import Swal from 'sweetalert2'
 import { Link } from 'react-router-dom'
 import Logo2 from '../../../img/pngegg.png'
 import star from '../../../img/Star.jpeg'
+import botany from '../../../img/Botany.jpeg'
 
 
-function Header() {
+function ZoologyHeader() {
     const [username, setUsername] = useState('')
     const [password, setPassword] = useState('')
     const [show, setShow] = useState(false);
@@ -41,16 +42,16 @@ function Header() {
             <Navbar variant="dark" sticky="top" style={{ backgroundColor: '#093266', height: '120px', opacity:'0.8' }}>
                 <Navbar.Brand > <img src={Logo2} /> </Navbar.Brand>
                 <Navbar.Brand style={{ fontSize: '1.2em' }}>Department of Biotechnology<br/>Ministry of Science & Technology<br/>Government of India</Navbar.Brand>
-                
+                {/* <Navbar.Brand > <img src={botany} /> </Navbar.Brand> */}
                 <Nav className="ml-auto">
                 <Navbar.Brand style={{ fontSize: '1.2em' }}>Marian Star Center<br/>St.Mary's College(Autonomous)<br/>Re-accredited by NAAC with 'A+' Grade<br/>Thoothukudi-628 001</Navbar.Brand>
                 <Navbar.Brand style={{marginTop:20}}> <img src={star} /> </Navbar.Brand>
                     <Link className='nav-link' to="/"><i class="fa fa-home" style={{padding:'5px',marginTop:50}}></i>Home</Link>
-                    <Link className='nav-link' onClick={handleShow}><i class="fa fa-sign-in" style={{padding:'5px',marginTop:50}}></i>Admin Login</Link>
+                    {/* <Link className='nav-link' onClick={handleShow}><i class="fa fa-sign-in" style={{padding:'5px',marginTop:50}}></i>Admin Login</Link> */}
                 </Nav>
 
             </Navbar>
-            <Modal
+            {/* <Modal
                 show={show}
                 onHide={handleClose}
                 backdrop='static'
@@ -95,9 +96,9 @@ function Header() {
 
 
                 </Modal.Body>
-            </Modal>
+            </Modal> */}
         </>
     )
 }
 
-export default Header
+export default ZoologyHeader

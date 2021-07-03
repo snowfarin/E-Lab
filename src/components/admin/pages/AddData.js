@@ -95,7 +95,8 @@ export class AddCategory extends Component {
     onSubmit = () => {
         const { lab, name, speciesClass, order, family, imageFile, imageName, mainContent, subContent, categoryObj } = this.state;
 
-        if (Object.values(this.state).every(e => e) === true) {
+        // if (Object.values(this.state).every(e => e) === true) {
+            if (Object.values(this.state)) {
 
             let keys = Object.keys(categoryObj)
             console.log(categoryObj, lab, 'categoryObj')
@@ -146,12 +147,13 @@ export class AddCategory extends Component {
                         })
                 }
             })
-        }else{
-            Swal.fire({
-                icon: 'warning',
-                text: 'Please fillout all fields'
-            })
         }
+        // else{
+        //     Swal.fire({
+        //         icon: 'warning',
+        //         text: 'Please fillout all fields'
+        //     })
+        // }
 
     }
 

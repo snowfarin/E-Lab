@@ -22,10 +22,11 @@ const firebaseConfig = {
 
 firebase.initializeApp(firebaseConfig);
 
-const db = firebase.firestore();
+export const db = firebase.firestore();
 const storage = firebase.storage();
 
 export const storageRef = storage.ref()
 export const imagesRef = storageRef.child('images/')
+
 export const categoryRef = db.collection('Category')
 export const contentRef = db.collection('Content') 

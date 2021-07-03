@@ -6,6 +6,7 @@ import AddCategory from '../admin/pages/AddCategory'
 import AddData from  '../admin/pages/AddData'
 import ContentPage from '../template/pages/ContentPage'
 import Logout from '../admin/auth/Logout'
+import EditDelete from  '../admin/pages/EditDelete'
 
 const login = localStorage.getItem('login')
 
@@ -20,7 +21,8 @@ function BaseRouter() {
                 <Route exact path='/logout' > <Logout /></Route>
                 {login ? <>
                 <Route exact path='/addCategory' > <AddCategory /></Route> 
-                <Route exact path='/addContent' > <AddData /></Route> </> :
+                <Route exact path='/addContent' > <AddData /></Route>
+                <Route exact path='/editDelete' > <EditDelete /></Route> </> :
                 <Redirect to='/' /> }
             </>
     )

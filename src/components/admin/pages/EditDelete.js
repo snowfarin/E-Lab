@@ -131,7 +131,7 @@ console.log('Mine',dummyBlog)
                                                 <th >Name</th>
                                                 <th >Class</th>
                                                 <th >Family</th>
-                                                {/* <th >Edit</th> */}
+                                                <th >Edit</th>
                                                 <th >Delete</th>
                                             </tr>
                                     </thead> 
@@ -143,7 +143,7 @@ console.log('Mine',dummyBlog)
                                                 <td>{dummy.class}</td>
                                                 <td>{dummy.family}</td>
                                             
-                                                {/* <td><Button variant="outline-success" onClick={() => setModalShow(true)}>Edit</Button></td> */}
+                                                <td><Button variant="outline-success" onClick={() => setModalShow(true)}>Edit</Button></td>
                                                 <td><button style={{ border: 'none' }}  onClick={() =>  onDelete(dummy.id) }><i className="fa fa-trash" style={{ fontSize: "18px", color: "red" }}></i></button></td>
                                             </tr>
                                    
@@ -151,11 +151,11 @@ console.log('Mine',dummyBlog)
                                        
                                     </tbody>   
                                 </table></div>
-                                {/* <Edit
+                                <Edit
                                     show={modalShow}
                                     onHide={() => setModalShow(false)}
-                                    // blog={dummyBlog}
-                                    /> */}
+                                    blog={dummyBlog}
+                                    />
        </div> </div>
     )
 

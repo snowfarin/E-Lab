@@ -1,5 +1,5 @@
 
-import React, { Component } from 'react'
+import React, { Component,useState } from 'react'
 import Header from '../tools/Header'
 import { Card, Row, Col, Form, Button,Modal } from 'react-bootstrap'
 import Content from '../tools/DataContent'
@@ -239,118 +239,64 @@ import firebase from 'firebase'
 // import firebase from '../Firebase';
 // import { Link } from 'react-router-dom';
 
-class Edit extends Component {
+const Edit=(props)=> {
 
-  constructor(props) {
-    super(props);
-    this.state = {
-        key:'',
-                  lab: 'botany',
+    const initial= {
+         key:null,
+                  lab: '',
             name: '',
-            speciesClass: '',
+            class: '',
             order: '',
             family: '',
-            // imageUrl: '',
-            imageName: '',
+            //  imageUrl: '',
+            // imageName: '',
             // imageFile: '',
             mainContent: '',
             subContent: '',
             category: '',
-            // categoryObj: '',
+            //  categoryObj: '',
     };
-  }
+    const [currentTutorial, setCurrentTutorial] = useState(initial);
 
-  componentDidMount() {
-    const ref = contentRef.doc(this.props.id);
-    ref.get().then((doc) => {
-      if (doc.exists) {
-        const board = doc.data();
-        // console.log("me",board)
-        this.setState({
-            key:doc.id,
-            lab: board.lab,
-                        name: board.name,
-                        class: board.class,
-                        order: board.order,
-                        family: board.family,
-                        // imageUrl: '',
-                        imageName: board.imageName,
-                        // imageFile: '',
-                        mainContent: board.mainContent,
-                        subContent: board.subContent,
-                        category:board.category,
-                        // categoryObj: '',
-        });
-      } else {
-        console.log("No such document!");
-      }
-    });
-  }
+    const { blog } = props;
+    if (currentTutorial.id !== blog.id) {
+      setCurrentTutorial(blog);
+    }
+    
+    const handleInputChange = (event) => {
+        const { name, value } = event.target;
+        setCurrentTutorial({ ...currentTutorial, [name]: value });
+      };
 
-  onChange = (e) => {
-    const state = this.state
-    state[e.target.name] = e.target.value;
-    this.setState({board:state});
-  }
+      const updateTutorial = () => {
+        const data = {
+                              lab: initial.lab,
+                            name: initial.name,
+                            class: initial.class,
+                            order: initial.order,
+                            family: initial.family,
+                            // imageUrl: initial.imageUrl,
+                            // imageName: initial.imageName,
+                            //  imageFile: initial.imageFile,
+                            mainContent: initial.mainContent,
+                            subContent: initial.subContent,
+                            category:initial.category,
+                            //  categoryObj: initial.categoryObj,
+        };
+    
+        contentRef.doc(currentTutorial.id).update(data)
+          .then(() => {
+            console.log("The tutorial was updated successfully!");
+          })
+          .catch((e) => {
+            console.log(e);
+          });
+      };
 
-  onSubmit = (e) => {
-    e.preventDefault();
-
-    const {  lab,
-                name,
-                speciesClass,
-                order,
-                family,
-                // imageUrl,
-                imageName,
-                // imageFile,
-                mainContent,
-                subContent,
-                category,
-                // categoryObj, 
-            } = this.state;
-
-    const updateRef = contentRef.doc(this.state.key);
-    updateRef.set({
-        lab,
-        name,
-        speciesClass,
-        order,
-        family,
-        // imageUrl,
-        imageName,
-        // imageFile,
-        mainContent,
-        subContent,
-        category,
-        // categoryObj, 
-    }).then((docRef) => {
-      this.setState({
-        key: '',
-        lab: 'botany',
-        name: '',
-        speciesClass: '',
-        order: '',
-        family: '',
-        // imageUrl: '',
-        imageName: '',
-        // imageFile: '',
-        mainContent: '',
-        subContent: '',
-        category: '',
-        // categoryObj: '',
-      });
-    //   this.props.history.push("/show/"+this.props.match.params.id)
-    })
-    .catch((error) => {
-      console.error("Error adding document: ", error);
-    });
-  }
-
-  render() {
+  
     return (
          <Modal
-              {...this.props}
+              {...props}
               size="lg"
               aria-labelledby="contained-modal-title-vcenter"
               centered
@@ -361,12 +307,13 @@ class Edit extends Component {
                 </Modal.Title>
               </Modal.Header>
               <Modal.Body>
+              {currentTutorial ? (
               <Form style={{ margin: '0px 40px' }}>
                                       <Row className='d-flex justify-content-center' >
                                           <Form.Group as={Row} >
                                               <Form.Label > Select Laboratory </Form.Label>
                                               <Col>
-                                                  <Form.Control as='select' name='lab' value={this.state.lab} onChange={this.onChange} required >
+                                                  <Form.Control as='select' name='lab' value={currentTutorial.lab} onChange={handleInputChange} required >
                                                       <option value='' disabled > </option>
                                                       <option value='botany' > Botany </option>
                                                       <option value='herbarium' > Herbarium </option>
@@ -375,9 +322,9 @@ class Edit extends Component {
                                               </Col>
                                           </Form.Group>
                                       </Row>
-                                      <Row >
-                                          {/* {category !== '' && this.CategorySelectLoop()} */}
-                                      </Row>
+                                      {/* <Row >
+                                          {currentTutorial.category !== '' && this.CategorySelectLoop()}
+                                      </Row> */}
                                       <div className='box' >
                                           <Row>
                                               <Col lg='6'>
@@ -388,8 +335,8 @@ class Edit extends Component {
                                                               type='text'
                                                               placeholder='Scientific Name'
                                                               name='name'
-                                                              value={this.state.name}
-                                                              onChange={this.onChange}
+                                                              value={currentTutorial.name}
+                                                              onChange={handleInputChange}
                                                           />
                                                       </Col>
                                                   </Form.Group>
@@ -401,9 +348,9 @@ class Edit extends Component {
                                                           <Form.Control
                                                               type='text'
                                                               placeholder='Class'
-                                                              name='speciesClass'
-                                                              value={this.state.class}
-                                                              onChange={this.onChange}
+                                                              name='class'
+                                                              value={currentTutorial.class}
+                                                              onChange={handleInputChange}
                                                           />
                                                       </Col>
                                                   </Form.Group>
@@ -416,8 +363,8 @@ class Edit extends Component {
                                                               type='text'
                                                               placeholder='order'
                                                               name='order'
-                                                              value={this.state.order}
-                                                              onChange={this.onChange}
+                                                              value={currentTutorial.order}
+                                                              onChange={handleInputChange}
                                                           />
                                                       </Col>
                                                   </Form.Group>
@@ -430,14 +377,14 @@ class Edit extends Component {
                                                               type='text'
                                                               placeholder='Family'
                                                               name='family'
-                                                              value={this.state.family}
-                                                              onChange={this.onChange}
+                                                              value={currentTutorial.family}
+                                                              onChange={handleInputChange}
                                                           />
                                                       </Col>
                                                   </Form.Group>
                                               </Col>
                                           </Row>
-                                          <Row>
+                                          {/* <Row>
                                               <Col lg='4'>
                                                   <Form.Group  >
                                                       <Form.Label > Species Image </Form.Label>
@@ -445,17 +392,17 @@ class Edit extends Component {
                                                           <Form.Control
                                                               style={{ width: '100%' }}
                                                               type='file'
-                                                              onChange={this.onChangeImage}
+                                                              onChange={handleInputChange}
                                                           />
                                                       </Col>
                                                   </Form.Group>
-                                              </Col>
+                                              </Col> */}
                                               {/* <Col lg='4'>
                                                   {imageUrl === '' ? <i class="fa fa-picture-o" style={{ fontSize: '5em' }} ></i> :
                                                       <img src={imageUrl} height='150px' width='100%' />}
       
                                               </Col> */}
-                                          </Row>
+                                          {/* </Row> */}
                                           <Row>
                                               <Col>
                                                   <Form.Group  >
@@ -466,8 +413,8 @@ class Edit extends Component {
                                                               type='text'
                                                               placeholder='Main Content'
                                                               name='mainContent'
-                                                              value={this.state.mainContent}
-                                                              onChange={this.onChange}
+                                                              value={currentTutorial.mainContent}
+                                                              onChange={handleInputChange}
                                                           />
                                                       </Col>
                                                   </Form.Group>
@@ -483,8 +430,8 @@ class Edit extends Component {
                                                               type='text'
                                                               placeholder='Sub Content'
                                                               name='subContent'
-                                                              value={this.state.subContent}
-                                                              onChange={this.onChange}
+                                                              value={currentTutorial.subContent}
+                                                              onChange={handleInputChange}
                                                           />
                                                       </Col>
                                                   </Form.Group>
@@ -492,9 +439,9 @@ class Edit extends Component {
                                           </Row>
                                       </div>
                                       <Row className='d-flex justify-content-center' style={{ marginTop: '20px' }}>
-                                          <Button variant='danger' style={{ margin: '10px' }} onClick={this.onSubmit}>Update</Button>
+                                          <Button variant='danger' style={{ margin: '10px' }} onClick={updateTutorial}>Update</Button>
                                       </Row>
-                                  </Form>
+                                  </Form>):''}
               </Modal.Body>
               {/* <Modal.Footer> */}
                 {/* <Button onClick={this.props.onHide}>Close</Button> */}
@@ -502,7 +449,7 @@ class Edit extends Component {
             </Modal>
     );
   }
-}
+
 
 
 

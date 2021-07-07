@@ -42,6 +42,7 @@ export class Category extends Component {
         }
         return list
     }
+
     render() {
         const { count } = this.state
         return (
@@ -51,6 +52,7 @@ export class Category extends Component {
                     {this.inputLoop()}
                     <Button variant='danger' style={{ margin: '10px' }} onClick={(e) => this.setState({ count: count + 1 })}> <i class="fa fa-plus" aria-hidden="true"></i> </Button>
                     <Button variant='danger' style={{ margin: '10px' }} onClick={(e) => this.setState({ count: count - 1 })}> <i class="fa fa-minus" aria-hidden="true"></i> </Button>
+                    <Button variant='danger' style={{ margin: '10px' }} onClick={(e) => this.props.delete}> <i class="fa fa-trash" aria-hidden="true"></i> </Button>
                 </Row>
             </div>
         )
